@@ -2,32 +2,39 @@ export function About() {
     return (
         <section
             id="about"
-            className="max-w-5xl mx-auto py-24 px-6"
+            className="mx-auto max-w-6xl px-6 py-24"
         >
-            <h2 className="text-4xl font-bold mb-8">
-                Sobre Mim
-            </h2>
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="space-y-4">
+                    <span className="text-sm uppercase tracking-[0.24em] text-[#7dd3fc]">Sobre</span>
+                    <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                        Backend para ambientes que nao toleram improviso.
+                    </h2>
+                </div>
 
-            <p
-                className="
-          text-zinc-400
-          text-lg
-          leading-9
-        "
-            >
-                Sou desenvolvedor backend especializado
-                em Java e arquitetura de microsserviços.
+                <div className="grid gap-6">
+                    <p className="text-lg leading-9 text-zinc-300">
+                        Sou desenvolvedor backend com foco em Java e arquiteturas orientadas a
+                        resiliencia. Minha experiencia passa por integracoes de alta disponibilidade,
+                        APIs criticas e ecossistemas de microsservicos em producao.
+                    </p>
 
-                Tenho experiência no mercado financeiro,
-                atuando em instituições como Banco PAN e
-                Bradesco, desenvolvendo APIs críticas,
-                integrações de alta disponibilidade e
-                soluções cloud utilizando AWS e Azure.
-
-                Atualmente meu foco está em arquitetura,
-                observabilidade, microsserviços e
-                desenvolvimento de soluções escaláveis.
-            </p>
+                    <div className="grid gap-4 md:grid-cols-3">
+                        <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                            <p className="text-sm text-zinc-400">Segmento</p>
+                            <p className="mt-3 text-lg text-white">Mercado financeiro</p>
+                        </div>
+                        <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                            <p className="text-sm text-zinc-400">Especialidade</p>
+                            <p className="mt-3 text-lg text-white">Java e Spring Boot</p>
+                        </div>
+                        <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                            <p className="text-sm text-zinc-400">Base tecnica</p>
+                            <p className="mt-3 text-lg text-white">Cloud e observabilidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

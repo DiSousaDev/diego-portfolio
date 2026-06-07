@@ -1,47 +1,63 @@
 export function Projects() {
+    const projects = [
+        {
+            title: "TechPag",
+            description:
+                "Plataforma para eventos com QR Code, pagamentos e gestao de operacao em campo.",
+            accent: "Pagamentos, QR Code e operacao",
+        },
+        {
+            title: "Credit Analysis",
+            description:
+                "Microsservicos resilientes com Kafka, arquitetura hexagonal e desenho orientado a dominio.",
+            accent: "Arquitetura e resiliencia",
+        },
+        {
+            title: "Scheduling Platform",
+            description:
+                "Sistema online de agendamento com Spring Boot e Angular, focado em fluxo e confiabilidade.",
+            accent: "Produto e integracao",
+        },
+    ];
+
     return (
         <section
             id="projects"
-            className="max-w-6xl mx-auto py-24 px-6"
+            className="mx-auto max-w-6xl px-6 py-24"
         >
-            <h2 className="text-4xl font-bold mb-12">
-                Projetos
-            </h2>
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <span className="text-sm uppercase tracking-[0.24em] text-[#f59e0b]">Portfolio</span>
+                    <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                        Projetos pensados para entregar operacao e clareza tecnica.
+                    </h2>
+                </div>
+
+                <p className="max-w-xl text-sm leading-7 text-zinc-400 md:text-base">
+                    Casos que mostram como tecnologia, arquitetura e experiencia de uso podem
+                    caminhar juntas.
+                </p>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-6">
+                {projects.map((project) => (
+                    <div
+                        key={project.title}
+                        className="group rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-6 transition duration-300 hover:border-white/20 hover:translate-y-[-2px]"
+                    >
+                        <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+                            {project.accent}
+                        </p>
 
-                <div className="border border-zinc-800 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                        TechPag
-                    </h3>
+                        <h3 className="mt-5 text-2xl font-semibold text-white">
+                            {project.title}
+                        </h3>
 
-                    <p className="text-zinc-400">
-                        Plataforma para eventos com QR Code,
-                        pagamentos e gestão de barracas.
-                    </p>
-                </div>
-
-                <div className="border border-zinc-800 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                        Credit Analysis
-                    </h3>
-
-                    <p className="text-zinc-400">
-                        Microsserviços resilientes com Kafka
-                        e arquitetura hexagonal.
-                    </p>
-                </div>
-
-                <div className="border border-zinc-800 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                        Scheduling Platform
-                    </h3>
-
-                    <p className="text-zinc-400">
-                        Sistema online de agendamento com
-                        Spring Boot e Angular.
-                    </p>
-                </div>
+                        <p className="mt-4 leading-8 text-zinc-300">
+                            {project.description}
+                        </p>
+                    </div>
+                ))}
 
             </div>
         </section>
