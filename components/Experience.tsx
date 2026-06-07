@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { experiences } from "@/data/experience";
 
 export function Experience() {
@@ -43,9 +44,21 @@ export function Experience() {
                         </div>
 
                         <div>
-                            <h3 className="text-2xl font-semibold text-white">
-                                {exp.company}
-                            </h3>
+                            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                                <h3 className="text-2xl font-semibold text-white">
+                                    {exp.company}
+                                </h3>
+
+                                <div className="relative h-12 w-36 overflow-hidden rounded-xl border border-white/10 bg-white px-4 py-2">
+                                    <Image
+                                        alt={exp.logoAlt}
+                                        className="object-contain"
+                                        fill
+                                        sizes="144px"
+                                        src={exp.logoSrc}
+                                    />
+                                </div>
+                            </div>
 
                             <p className="mt-3 text-zinc-300">
                                 {exp.description}

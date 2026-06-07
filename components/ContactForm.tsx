@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, CheckCircle2, Mail, MapPin, Send } from "lucide-react";
+import { CheckCircle2, Mail, MapPin, Send } from "lucide-react";
 
 const contactInbox = "me@diego.dev.br";
 
