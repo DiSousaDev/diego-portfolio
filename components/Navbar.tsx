@@ -31,7 +31,7 @@ export function Navbar() {
                 <div className="hidden gap-6 text-sm text-zinc-300 md:flex">
                     <a className="transition hover:text-white" href="#about">Sobre</a>
                     <a className="transition hover:text-white" href="#skills">Skills</a>
-                    <a className="transition hover:text-white" href="#experience">Experiencia</a>
+                    <a className="transition hover:text-white" href="#experience">Experiência</a>
                     <a className="transition hover:text-white" href="#projects">Projetos</a>
                     <a className="transition hover:text-white" href="#contact">Contato</a>
                 </div>

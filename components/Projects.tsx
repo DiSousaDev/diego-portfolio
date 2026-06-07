@@ -3,20 +3,20 @@ export function Projects() {
         {
             title: "TechPag",
             description:
-                "Plataforma para eventos com QR Code, pagamentos e gestao de operacao em campo.",
-            accent: "Pagamentos, QR Code e operacao",
+                "Plataforma para eventos com QR Code, pagamentos e gestão de operação em campo.",
+            accent: "Pagamentos, QR Code e operação",
         },
         {
             title: "Credit Analysis",
             description:
-                "Microsservicos resilientes com Kafka, arquitetura hexagonal e desenho orientado a dominio.",
-            accent: "Arquitetura e resiliencia",
+                "Microsserviços resilientes com Kafka, arquitetura hexagonal e desenho orientado a domínio.",
+            accent: "Arquitetura e resiliência",
         },
         {
             title: "Scheduling Platform",
             description:
                 "Sistema online de agendamento com Spring Boot e Angular, focado em fluxo e confiabilidade.",
-            accent: "Produto e integracao",
+            accent: "Produto e integração",
         },
     ];
 
@@ -27,14 +27,14 @@ export function Projects() {
         >
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
-                    <span className="text-sm uppercase tracking-[0.24em] text-[#f59e0b]">Portfolio</span>
+                    <span className="text-sm uppercase tracking-[0.24em] text-[#f59e0b]">Portfólio</span>
                     <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-                        Projetos pensados para entregar operacao e clareza tecnica.
+                        Projetos pensados para entregar operação e clareza técnica.
                     </h2>
                 </div>
 
                 <p className="max-w-xl text-sm leading-7 text-zinc-400 md:text-base">
-                    Casos que mostram como tecnologia, arquitetura e experiencia de uso podem
+                    Casos que mostram como tecnologia, arquitetura e experiência de uso podem
                     caminhar juntas.
                 </p>
             </div>

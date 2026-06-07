@@ -16,7 +16,7 @@ export function Skills() {
                 </div>
 
                 <p className="max-w-xl text-sm leading-7 text-zinc-400 md:text-base">
-                    Tecnologias escolhidas para escala, manutencao e previsibilidade operacional.
+                    Tecnologias escolhidas para escala, manutenção e previsibilidade operacional.
                 </p>
             </div>
 

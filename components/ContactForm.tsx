@@ -30,13 +30,13 @@ export function ContactForm() {
 
                 <p className="max-w-xl text-base leading-8 text-zinc-300 md:text-lg">
                     Envie sua mensagem por aqui para iniciar a conversa sobre projetos,
-                    consultoria ou oportunidades de colaboracao.
+                    consultoria ou oportunidades de colaboração.
                 </p>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.85)]">
                         <Mail className="mb-4 h-5 w-5 text-[#f59e0b]" />
-                        <p className="text-sm text-zinc-400">Inbox</p>
+                        <p className="text-sm text-zinc-400">E-mail</p>
                         <p className="mt-2 text-sm font-medium text-white">{contactInbox}</p>
                     </div>
 
@@ -63,7 +63,7 @@ export function ContactForm() {
                         </label>
 
                         <label className="space-y-2">
-                            <span className="text-sm text-zinc-300">Email</span>
+                            <span className="text-sm text-zinc-300">E-mail</span>
                             <input
                                 className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none transition focus:border-[#f59e0b] focus:bg-black/50"
                                 name="email"
@@ -103,14 +103,6 @@ export function ContactForm() {
                             Enviar mensagem
                             <Send className="h-4 w-4" />
                         </button>
-
-                        <a
-                            className="inline-flex items-center gap-2 text-sm text-zinc-300 transition hover:text-white"
-                            href={`mailto:${contactInbox}`}
-                        >
-                            Abrir cliente de email
-                            <ArrowUpRight className="h-4 w-4" />
-                        </a>
                     </div>
                 </form>
 
@@ -118,8 +110,8 @@ export function ContactForm() {
                     <div className="mt-5 flex items-start gap-3 rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-100">
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                         <p>
-                            Mensagem enviada com sucesso. Retornarei pelo endereco informado
-                            assim que possivel, ou voce pode escrever diretamente para{" "}
+                            Mensagem enviada com sucesso. Retornarei pelo endereço informado
+                            assim que possível, ou você pode escrever diretamente para{" "}
                             <span className="font-medium text-white">{contactInbox}</span>.
                         </p>
                     </div>

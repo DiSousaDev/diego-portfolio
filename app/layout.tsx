@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
     title: "Diego Sousa | Java Backend Engineer",
     description:
-        "Especialista em Java, Spring Boot, AWS, Azure e Microsserviços.",
+        "Especialista em Java, Spring Boot, AWS, Azure e microsserviços.",
 
     keywords: [
         "Java",
@@ -11,7 +11,7 @@ export const metadata = {
         "AWS",
         "Azure",
         "Backend",
-        "Microsserviços"
+        "microsserviços"
     ]
 };
 

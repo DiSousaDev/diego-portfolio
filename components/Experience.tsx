@@ -8,15 +8,15 @@ export function Experience() {
         >
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
-                    <span className="text-sm uppercase tracking-[0.24em] text-[#7dd3fc]">Trajetoria</span>
+                    <span className="text-sm uppercase tracking-[0.24em] text-[#7dd3fc]">Trajetória</span>
                     <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-                        Experiencia em operacoes com alto nivel de exigencia.
+                        Experiência em operações com alto nível de exigência.
                     </h2>
                 </div>
 
                 <p className="max-w-xl text-sm leading-7 text-zinc-400 md:text-base">
                     Passagem por bancos e plataformas em que disponibilidade, rastreabilidade e
-                    consistencia fazem parte do produto.
+                    consistência fazem parte do produto.
                 </p>
             </div>
 
