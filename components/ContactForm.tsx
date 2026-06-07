@@ -6,12 +6,51 @@ import { ArrowUpRight, CheckCircle2, Mail, MapPin, Send } from "lucide-react";
 const contactInbox = "me@diego.dev.br";
 
 export function ContactForm() {
-    const [status, setStatus] = useState<"idle" | "success">("idle");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [feedbackMessage, setFeedbackMessage] = useState("");
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        setStatus("success");
-        event.currentTarget.reset();
+        setStatus("loading");
+        setFeedbackMessage("");
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const payload = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            subject: formData.get("subject"),
+            message: formData.get("message"),
+        };
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+            const data = (await response.json()) as { error?: string };
+
+            if (!response.ok) {
+                throw new Error(data.error ?? "Não foi possível enviar sua mensagem agora.");
+            }
+
+            setStatus("success");
+            setFeedbackMessage(
+                "Mensagem enviada com sucesso. Retornarei pelo endereço informado assim que possível."
+            );
+            form.reset();
+        } catch (error) {
+            const message =
+                error instanceof Error
+                    ? error.message
+                    : "Não foi possível enviar sua mensagem agora.";
+
+            setStatus("error");
+            setFeedbackMessage(message);
+        }
     }
 
     return (
@@ -98,9 +137,10 @@ export function ContactForm() {
                     <div className="flex flex-col gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
                         <button
                             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:translate-y-[-1px] hover:bg-[#f6f6f6]"
+                            disabled={status === "loading"}
                             type="submit"
                         >
-                            Enviar mensagem
+                            {status === "loading" ? "Enviando..." : "Enviar mensagem"}
                             <Send className="h-4 w-4" />
                         </button>
                     </div>
@@ -110,10 +150,14 @@ export function ContactForm() {
                     <div className="mt-5 flex items-start gap-3 rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-100">
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                         <p>
-                            Mensagem enviada com sucesso. Retornarei pelo endereço informado
-                            assim que possível, ou você pode escrever diretamente para{" "}
-                            <span className="font-medium text-white">{contactInbox}</span>.
+                            {feedbackMessage}
                         </p>
+                    </div>
+                )}
+
+                {status === "error" && (
+                    <div className="mt-5 rounded-2xl border border-rose-400/20 bg-rose-400/10 px-4 py-3 text-sm text-rose-100">
+                        {feedbackMessage}
                     </div>
                 )}
             </div>
