@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/vue";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
     title: "Diego Sousa | Java Backend Engineer",
