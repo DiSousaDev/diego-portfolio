@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/vue";
 
 export const metadata = {
     title: "Diego Sousa | Java Backend Engineer",
@@ -17,16 +18,17 @@ export const metadata = {
 };
 
 export default function RootLayout({
-                                     children,
+                                       children,
                                    }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-      <html lang="pt-BR">
-      <body>
+    return (
+        <html lang="pt-BR">
+        <body>
         {children}
-        <Analytics />
-      </body>
-      </html>
-  );
+        <Analytics/>
+        <SpeedInsights/>
+        </body>
+        </html>
+    );
 }
