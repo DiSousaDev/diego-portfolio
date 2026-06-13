@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
     title: "Diego Sousa | Java Backend Engineer",
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
       </html>
   );
 }
