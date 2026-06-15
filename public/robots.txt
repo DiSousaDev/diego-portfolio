@@ -1,0 +1,12 @@
+# robots.txt for Diego Sousa portfolio
+# Allow all crawlers and point to sitemap
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://diego.dev.br/sitemap.xml
+
+# If you want to temporarily prevent indexing during development, change to:
+# Disallow: /
+
